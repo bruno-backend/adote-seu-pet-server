@@ -1,52 +1,47 @@
-
-import { useContext } from "react"
 import { Link } from "react-router-dom"
-import { Context } from "frontend/src/context/UserContext"
-
-import Logo from 'frontend/src/assets/img/logo.png'
-import styles from 'frontend/src/components/Layout/Navbar.module.css'
+import Logo from "../../assets/img/logo.png"
 
 function Navbar() {
-
-    const { authenticated , logout} = useContext(Context)
+    // Example: replace with your actual authentication logic
+    const isAuthenticated = false;
+    const logout = () => {
+        // Implement logout logic here
+    };
 
     return (
-        <nav className={styles.navbar}>
-            <div className={styles.navbar_logo}>
-                <img src={Logo} alt="Adote Seu Pet" />
-                <h2>Adote seu Pet</h2>
+        <nav>
+            <div className="logo">  
+                <Link to="/">
+                    <img src={Logo} alt="Adotando Sofia" />
+                    <h2>Adotando Sofia</h2>
+                </Link>
             </div>
             <ul>
                 <li>
                     <Link to="/">Adotar</Link>
                 </li>
-                {authenticated ? (
-                    <> 
-
-                    <li>
-                            <Link to="/user/profile">Perfil</Link>
-                    </li>
-
-                    <li onClick={logout}>Sair</li>
+                <li>
+                    <Link to="/pet/create">Entrar</Link>
+                </li>
+                {isAuthenticated ? (
+                    <>
+                        <li>
+                            <Link to="/user/profile">Login</Link>
+                        </li>
+                        <li onClick={logout}>Sair</li>
                     </>
                 ) : (
                     <>
                         <li>
                             <Link to="/login">Entrar</Link>
                         </li>
-
                         <li>
                             <Link to="/register">Cadastrar</Link>
                         </li>
                     </>
-                )
-
-
-                }
-
+                )}
             </ul>
         </nav>
-
     )
 }
 

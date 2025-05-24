@@ -1,50 +1,26 @@
-import { BrowserRouter as Router,Routes, Route } from "react-router-dom"
-import React from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-/* Components */
-import Navbar from "frontend/src/components/Layout/Navbar"
-import Footer from "frontend/src/components/Layout/Footer"
-import Message from "frontend/src/components/Layout/Message"
+import Login from './components/Auth/login';
+import Register from './components/Auth/Register';
+import Home from './components/Auth/Home';
+import Profile from './components/Auth/User/Profile';
 
-
-/*  pages */
-import Login from 'frontend/src/components/pags/Auth/login'
-import Register from 'frontend/src/components/pags/Auth/Register'
-import Home from 'frontend/src/components/pags/Home'
-import Container from "frontend/src/components/Layout/Container"
-import Profile from "frontend/src/components/pags/User/Profile"
-
-/* context */
-import { UserProvider } from "frontend/src/context/UserContext"
+import { UserProvider } from './context/UserContext';
 
 function App() {
-
   return (
     <Router>
       <UserProvider>
-      <Navbar />
-      <Message />
-      <Container>
-      <Routes>
-
-        <Route path="/login" element={<Login/>} >
-        </Route>
-
-        <Route path="/register" element={<Register/>}>
-        </Route>
-
-        <Route path="/user/profile" element={<Profile/>}>
-        </Route>
-
-        <Route path="/" element={<Home/>}>
-        </Route>
-
-      </Routes>
-      </Container>
-      <Footer />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/user/profile" element={<Profile />} />
+        </Routes>
       </UserProvider>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

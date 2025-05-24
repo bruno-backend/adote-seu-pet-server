@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import 'frontend/src/index.css';
-import App from 'frontend/src/App';
-
+import './index.css';  // arquivo CSS na pasta src
+import App from './App'; // arquivo App.js na pasta src
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -10,3 +9,4 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
