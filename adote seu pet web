@@ -1,0 +1,55 @@
+# 🐾 AdoteSeuPet - Backend
+
+🚀 Serviço backend do projeto **AdoteSeuPet**, responsável por gerenciar cadastros de animais, usuários, ONGs, autenticação e integração com banco de dados.
+
+---
+
+## 🔧 Tecnologias Utilizadas
+
+- Node.js
+- Express
+- MongoDB + Mongoose
+- JSON Web Token (JWT) - Autenticação
+- Multer (Upload de imagens)
+- Bcrypt (Hash de senhas)
+- Cookie-Parser
+- CORS
+- Nodemon (Em desenvolvimento)
+
+---
+
+## 🚀 Como rodar este projeto na sua máquina
+
+### 🔗 Clone o repositório
+```bash
+git clone https://github.com/bruno-backend/adote-seu-pet-server.git
+
+Funcionalidades
+ Cadastro e autenticação de usuários
+
+ Cadastro de ONGs
+
+ Cadastro de animais para adoção
+
+ Upload de imagens dos animais
+
+ Listagem e busca de animais
+
+ Controle de adoções
+
+ Proteção de rotas com autenticação JWT
+
+🏗️ Status do Projeto
+🚧 Em desenvolvimento — novas features chegando! 🚀
+
+🤝 Contribuidore criando README do backend
+
+
+👤 @bruno-backend
+📜 Licença
+Este projeto está sob a licença MIT.
+Feito com ❤️ por pessoas que acreditam que todo animal merece um lar!
+
+
+
+
