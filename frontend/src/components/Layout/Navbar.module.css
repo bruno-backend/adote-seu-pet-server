@@ -13,7 +13,7 @@
 
 .navbar_logo img {
   width: 40px;
-  margin-right: .8em;
+  margin-right: 0.8em;
 }
 
 .navbar ul {
@@ -33,11 +33,7 @@
   border-radius: 5px;
 }
 
-.navbar li:hover {
-  background-color: #16479d;
-  color: #FFF;
-}
-
 .navbar li:hover > a {
+  background-color: #4e0438;
   color: #FFF;
 }

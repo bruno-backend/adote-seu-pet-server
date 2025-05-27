@@ -1,26 +1,49 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import React from 'react'
 
-import Login from './components/Auth/login';
-import Register from './components/Auth/Register';
-import Home from './components/Auth/Home';
-import Profile from './components/Auth/User/Profile';
+/* components */
+import Navbar from './components/Layout/Navbar'
+import Footer from './components/Layout/Footer'
+import Message from './components/Layout/Message'
+import Container from './components/Layout/Container'
 
-import { UserProvider } from './context/UserContext';
+/* pages */
+import Home from './components/pages/Home'
+import Login from './components/pages/Auth/login'
+import Register from './components/pages/Auth/Register'
+import Profile from './components/pages/User/Profile'
+import AddPet from './components/pages/Pet/AddPet'
+import MyPets from './components/pages/Pet/MyPets'
+import EditPet from './components/pages/Pet/EditPet'
+import PetDetails from './components/pages/Pet/PetDetails'
+import MyAdoptions from './components/pages/Pet/MyAdoptions'
+
+/* contexts */
+import { UserProvider } from './context/UserContext'
 
 function App() {
   return (
     <Router>
       <UserProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/user/profile" element={<Profile />} />
-        </Routes>
+        <Navbar />
+        <Message />
+        <Container>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/user/profile" element={<Profile />} />
+            <Route path="/pet/add" element={<AddPet />} />
+            <Route path="/pet/edit/:id" element={<EditPet />} />
+            <Route path="/pet/mypets" element={<MyPets />} />
+            <Route path="/pet/myadoptions" element={<MyAdoptions />} />
+            <Route path="/pet/:id" element={<PetDetails />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </Container>
+        <Footer />
       </UserProvider>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
